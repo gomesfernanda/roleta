@@ -109,7 +109,7 @@ def main():
 
     if st.session_state.stage >= 1 and st.session_state.stage != 10:
         tempo = st.radio(
-            "Quanto tempo você tem?",
+            'Quanto tempo você tem?',
             ["↓", "Pouco", "Médio", "Bastante"], on_change=set_state, args=[2])
 
     if st.session_state.stage >= 2 and st.session_state.stage != 10:
