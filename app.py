@@ -67,9 +67,10 @@ def main():
     auth = authorize_google_api(sheet, worksheet)
 
     st.title('Roleta das tarefas')  # Set Title of the webapp
-    st.image('https://media4.giphy.com/media/70OiJhMBae5j6AFL3f/200w.webp?cid=ecf05e47w34ilvp46d7uz4sjs06tl8p87tuq6zumcxubwuoa&ep=v1_gifs_related&rid=200w.webp&ct=g')
+
     if 'stage' not in st.session_state:
         st.session_state.stage = 0
+
 
     def set_state(i):
         st.session_state.stage = i
@@ -87,8 +88,11 @@ def main():
         st.session_state["text2"] = ""
 
     if st.session_state.stage == 0:
+        st.image(
+            'https://media4.giphy.com/media/70OiJhMBae5j6AFL3f/200w.webp?cid=ecf05e47w34ilvp46d7uz4sjs06tl8p87tuq6zumcxubwuoa&ep=v1_gifs_related&rid=200w.webp&ct=g')
         st.button('Sortear e completar', on_click=set_state, args=[1])
         st.button('Adicionar', on_click=set_state_18)
+
 
     if st.session_state.stage == -1:
         st.header('Nova tarefa')
